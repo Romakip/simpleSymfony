@@ -1,0 +1,27 @@
+{% block head %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Document{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <div id="container">
+        <a href="/"><img id="logo" src="{{ asset('images/logo.jpg')}}" alt="logo"></a>
+{% endblock %}
+        {% block widget %}
+        {% endblock %}
+        {% block body %}{% endblock %}
+        <div id="footer">
+            {% block footer %}Простая PHP CMS &copy; 2017. Все права принадлежат всем. ;) <a href="{{ path('app_login') }}">Site Admin</a>{% endblock %}
+        </div>
+    </div>
+    <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+    <script src="{{ asset('loaderIdentity.js') }}"></script>
+    <script src="{{ asset('showContent.js') }}"></script>
+</body>
+</html>

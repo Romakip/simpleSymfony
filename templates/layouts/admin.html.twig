@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html.twig' %}
+{% block widget %}
+<div id="adminHeader">
+    <h2>Widget News Admin</h2>
+    {% if app.user %}
+        <p>You are logged in as <b>{{ app.user.username }}</b>
+    {% endif %}
+        <a href="{{ path('article') }}">Edit Articles</a>
+        <a href="{{ path('category') }}">Edit Categories</a>
+        <a href="{{ path('app_logout') }}">Log out</a>
+    </p>
+</div>
+{% endblock %}

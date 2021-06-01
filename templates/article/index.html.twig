@@ -1,0 +1,24 @@
+{#{% extends 'layouts/base.html.twig' %}#}
+{% extends 'layouts/admin.html.twig'%}
+{% block body %}
+    <h1 align="center">All articles!</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Article</th>
+            <th>Category</th>
+        </tr>
+    {% for article in articles %}
+        <tr onclick="location='/article/edit/{{ article.id }}'">
+            <td>{{ article.publicationDate }}</td>
+            <td>{{ article.title }}</td>
+            {% for category in categories %}
+                {% if category.id == article.categoryId %}
+                    <td>{{ category.name }}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    <p><a href="{{ path('article_new') }}">Add a new Article</a></p>
+{% endblock %}

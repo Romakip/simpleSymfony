@@ -1,0 +1,15 @@
+{% extends 'layouts/admin.html.twig' %}
+{% block body %}
+    <h1 align="center">All categories!</h1>
+    <table>
+        <tr>
+            <th>Category</th>
+        </tr>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ path('category_new') }}">Add a new category</a></p>
+{% endblock %}

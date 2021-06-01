@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html.twig' %}
+{% block body %}
+    <h1 style="width: 75%;">{{ article.title }}</h1>
+    <div style="width: 75%; font-style: italic;">{{ article.summary }}</div>
+    <div style="width: 75%;">{{ article.content }}</div>
+    <p class="pubDate">{{ article.publicationDate }}
+    in <a href="/">{{ category }}</a>
+    </p>
+
+    <p><a href="/">Вернуться на главную страницу</a></p>
+{% endblock %}

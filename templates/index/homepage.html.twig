@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html.twig' %}
+{% block body %}
+    <ul id="headlines" class="archive">
+        {% for article in articles %}
+            <li>
+                <h2>
+                    <span class="pubDate">{{ article.publicationDate }}</span>
+                    <a href="/article/{{ article.id }}">{{ article.title }}</a>
+                    {% for category in categories %}
+                        {% if category.id == article.categoryId %}
+                            <span class="category">
+                                in {{ category.name }}
+                            </span>
+                        {% endif %}
+                    {% endfor %}
+                </h2>
+                <p class="summary">{{ article.summary }}</p>
+            </li>
+            <ul class="ajax-load">
+                <li><a href="/">Показать продолжение (POST)</a></li>
+                <li><a href="/">Показать продолжение (GET)</a></li>
+            </ul>
+            <a class="showContent" href="/article/{{ article.id }}">Показать полностью</a>
+        {% endfor %}
+    </ul>
+{% endblock %}

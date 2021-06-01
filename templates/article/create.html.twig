@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html.twig' %}
+{% block body %}
+{{ form_start(form) }}
+    <ul>
+    <li>
+        {{ form_label(form.title)}}
+        {{ form_widget(form.title)}}
+    </li>
+    <li>
+        {{ form_label(form.summary)}}
+        {{ form_widget(form.summary)}}
+    </li>
+    <li>
+        {{ form_label(form.content)}}
+        {{ form_widget(form.content)}}
+    </li>
+    {{ form_label(form.category)}}
+    {{ form_widget(form.category)}}
+    {{ form_label(form.publicationDate)}}
+    {{ form_widget(form.publicationDate)}}
+    </ul>
+    <div class="buttons">
+    {{ form_widget(form.save) }}
+    {{ form_widget(form.cancel) }}
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
