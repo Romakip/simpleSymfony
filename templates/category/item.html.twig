@@ -1,0 +1,14 @@
+{% extends 'layouts/admin.html.twig' %}
+{% block body %}
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.description }}</p>
+    <div class="buttons">
+        <span class="button" onclick="location='{{ path('category-edit', {id: category.id}) }}'">Редактировать</span>
+    </div>
+        <h2 align="center">Все статьи, относящиеся к данной категории!</h2>
+        <div style="border: 5px solid green; background-color: #00a0b0; border-radius: 100px">
+            {% for article in category.acrticles  %}
+                    <h3 class="article_in_category" align="center" onclick="location='/article/edit/{{ article.id }}'">{{ article.title }}</h3>
+            {% endfor %}
+        </div>
+{% endblock %}

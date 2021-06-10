@@ -6,7 +6,7 @@
             <th>Category</th>
         </tr>
         {% for category in categories %}
-        <tr>
+            <tr onclick="location='/category/{{ category.id }}'">
             <td>{{ category.name }}</td>
         </tr>
         {% endfor %}

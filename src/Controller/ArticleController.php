@@ -124,13 +124,13 @@ class ArticleController extends AbstractController
         $article = $this->getDoctrine()
             ->getRepository(Article::class)
             ->find($page);
-        $categoryName = $article->getCategory()->getName();
+        $category = $article->getCategory();
         if (!$article)
         {
             throw $this->createNotFoundException('Not found articles');
         }
 
-        return $this->render('article/item.html.twig', ['article' => $article, 'category' => $categoryName]);
+        return $this->render('article/item.html.twig', ['article' => $article, 'category' => $category]);
     }
 
     /**

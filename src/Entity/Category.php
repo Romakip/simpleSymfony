@@ -34,9 +34,15 @@ class Category
      */
     private $acrticles;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Subcategory::class, mappedBy="category", cascade={"persist"})
+     */
+    private $subcategories;
+
     public function __construct()
     {
         $this->acrticles = new ArrayCollection();
+        $this->subcategories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -92,6 +98,36 @@ class Category
             // set the owning side to null (unless already changed)
             if ($acrticle->getCategory() === $this) {
                 $acrticle->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Subcategory[]
+     */
+    public function getSubcategories(): Collection
+    {
+        return $this->subcategories;
+    }
+
+    public function addSubcategory(Subcategory $subcategory): self
+    {
+        if (!$this->subcategories->contains($subcategory)) {
+            $this->subcategories[] = $subcategory;
+            $subcategory->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubcategory(Subcategory $subcategory): self
+    {
+        if ($this->subcategories->removeElement($subcategory)) {
+            // set the owning side to null (unless already changed)
+            if ($subcategory->getCategory() === $this) {
+                $subcategory->setCategory(null);
             }
         }
 

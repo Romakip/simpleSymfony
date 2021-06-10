@@ -4,7 +4,7 @@
     <div style="width: 75%; font-style: italic;">{{ article.summary }}</div>
     <div style="width: 75%;">{{ article.content }}</div>
     <p class="pubDate">{{ article.publicationDate }}
-    in <a href="/">{{ category }}</a>
+    in <span class="category_in_article" onclick="location='/category/{{ category.id }}'">{{ category.name }}</span>
     </p>
 
     <p><a href="/">Вернуться на главную страницу</a></p>

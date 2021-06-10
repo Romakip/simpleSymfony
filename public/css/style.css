@@ -352,3 +352,95 @@ ul.ajax-load li {
     padding: 3px; /* Поля вокруг текста */
     font-size: 12px;
 }
+
+.article_in_category:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.category_in_article:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.button {
+  border: 1px solid orange;
+  border-radius: 100px;
+  padding: 15px;
+  background-color: orange;
+  color: blue;
+
+}
+
+.button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.subcategories-ul li input{
+  position: relative;
+  /*display: inline-block;*/
+  width: 50%;
+}
+
+.subcategories-ul li label {
+  padding-right: 25px;
+}
+
+.subcategories-ul li i {
+  color: green;
+  padding-left: 10px;
+}
+
+.round:hover {
+  background-color: orange;
+}
+
+.subcategories {
+  text-align: center;
+}
+
+.add_item_link {
+  margin-top: 15px;
+  /*display: inline-block;*/
+  text-align: center;
+  background-color: blue;
+  border: 0;
+  width: 250px;
+}
+
+.add_item_link:hover {
+  color: #5eb5e0;;
+  background-color: yellow;
+}
+
+.deleteSubcategory:hover {
+  background-color: red;
+}
+
+ul.subcategories div {
+  /*position: relative;*/
+  /*display: inline-block;*/
+}
+
+/*ul.subcategories li {*/
+/*  position: relative;*/
+/*  display: inline-block;*/
+/*}*/
+
+ul.subcategories {
+  align-content: center;
+}
+
+ul.subcategories input {
+  /*display: inline-block;*/
+  /*width: 200px;*/
+}
+
+.deleteSubcategory {
+  margin: 15px;
+}
+
+ul.subcategories label {
+
+}

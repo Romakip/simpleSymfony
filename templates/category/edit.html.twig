@@ -1,0 +1,22 @@
+{% extends 'layouts/admin.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+        <ul>
+            <li>{{ form_row(form.name) }}</li>
+            <li>{{ form_row(form.description) }}</li>
+
+            <h3 align="center">Subcategories</h3>
+            <ul class="subcategories" data-prototype="{{ form_widget(form.subcategories.vars.prototype)|e('html_attr') }}">
+                    {% for subcategory in form.subcategories %}
+                        <li>{{ form_row(subcategory.name) }}</li>
+                    {% endfor %}
+                    <button type="button" class="add_item_link" data-collection-holder-class="subcategories">Add a new subcategory</button>
+            </ul>
+        </ul>
+    <div class="buttons">
+        {{ form_widget(form.save) }}
+        <a href="{{ path('category') }}">{{ form_widget(form.cancel) }}</a>
+        <a href="{{ path('delete_category', {id:category.id}) }}">{{ form_widget(form.delete) }}</a>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

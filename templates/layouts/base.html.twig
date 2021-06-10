@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Document{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="container">
@@ -20,8 +21,11 @@
             {% block footer %}Простая PHP CMS &copy; 2017. Все права принадлежат всем. ;) <a href="{{ path('app_login') }}">Site Admin</a>{% endblock %}
         </div>
     </div>
-    <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-    <script src="{{ asset('loaderIdentity.js') }}"></script>
-    <script src="{{ asset('showContent.js') }}"></script>
+    {% block script %}
+        <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+        <script src="{{ asset('loaderIdentity.js') }}"></script>
+        <script src="{{ asset('showContent.js') }}"></script>
+        <script src="{{ asset('js/index.js') }}"></script>
+    {% endblock %}
 </body>
 </html>
